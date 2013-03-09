@@ -79,25 +79,42 @@ Modules will make up a majority of your websites styles. There are three parts t
 There are [various naming conventions](LINK THIS). Below is my preferred naming convention for modules, modifiers, and subcomponents.
 
     .module {...}
+    
     .module--modifier {...}  /* Use double dash for modifiers */
+    
     .module-subcomponent {...}  /* Use single dash for subcomponents */
+    
     .module-subcomponent--modifier {...} /* A modifier on a subcomponent */
 
 If your module name is two or more words, use camel case. This allow dashes to represent distinctions between modules, modifiers, and subcomponents. 
 
-    .moduleName {...} /* Correct */
-    .productReviews {...}  /* Correct */
-    .product-reviews {...} /* Incorrect */
+    .moduleName {...} /* Correct module naming */
+    
+    .productReviews {...}  /* Correct module  naming */
+    
+    .product-reviews {...} /* Incorrect module naming */
+    
+**Subcomponent Naming Conventions**
+A header, body, and footer are common subcomponents of modules. In OOCSS, these items have the following classes, `.hd, .bd, .ft`
+If you are using abbreviated class names, use 3 letters at minimum. `.hdr, .bdy, .ftr`
 
 Full example of the three parts of modules.
 
-    .post {...}
-    .post-title {...}
-    .post-meta {...}
-    .post-entry {...}
-    .post-meta--sub{...}
+    .entry {...} /* Module */
+    
+    .entry-hdr {...}  /* Module Subcomponent */
+    
+    .entry-title {...}   /* Module Subcomponent */
+    
+    .entry-meta {...}   /* Module Subcomponent */
+    
+    .entry-body {...}   /* Module Subcomponent */
+    
+    .entry-meta--sub {...}   /* Module Subcomponent Modifier */
+    
+    .entry--featured {...}   /* Module Modifier */
 
-## States
+### States
 
 States styles are things like media queries, :hover, :focus, etc., and JavaScript states.
 
@@ -105,6 +122,56 @@ Include state styles that affect layout or module styles after the styles they a
 
 As for generic states like, `is-hidden`, include these in a **State section** following your **Modules section** in your stylesheet.
 
+## Comments
+
+I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](https://github.com/necolas/idiomatic-css) with my own minor adjustments.
+
+* Place comments on a new line above their subject.
+* Keep line-length to a sensible maximum, e.g., 80 columns.
+* Create a comment for each main section, base, layout, modules, and state.
+* Create comments for sub-sections, typically I add these above modules.
+* There should be no line gap between section/sub-section comments and multiline comments.
+
+
+**Comment types example inspired by Idiomatic CSS comments**
+ 
+    /*----------------------------------------------------------------------------
+     * Section comment block
+    ----------------------------------------------------------------------------*/
+
+    /* Sub-section comment block
+    --------------------------------------*/
+    
+    /**
+     * The first sentence of the long description starts here and continues on this
+     * line for a while finally concluding here at the end of this paragraph.
+     *
+     * The long description is ideal for more detailed explanations and
+     * documentation. It can include example HTML, URLs, or any other information
+     * that is deemed necessary or useful.
+     */
+    
+    /* Basic comment */
+
+**Comment spacing examples**
+
+    /*----------------------------------------------------------------------------
+     * Modules
+    ----------------------------------------------------------------------------*/
+
+    /* Post Entries
+    --------------------------------------*/
+    /**
+     * Styles post entries and featured post entries. Included here could be more
+     * details about the styles for other developers.
+     */
+    
+    .entry {...} 
+    .entry--featured {
+      *display: inline; /* IE7 and lower fix */
+      *zoom: 1; /* IE7 and lower fix */
+    }
+    
 ## Additional recommendations
 * Avoid using IDs. The specifity they add can be difficult work with.
 * If you are minifing your CSS, include a link in a comment to view the unminified CSS.
