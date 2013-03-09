@@ -61,7 +61,7 @@ Currently, the [most efficient way to serve CSS for multiple devices is via 1 st
 Order styles based on SMACSS structure with my own additions.
 
 * **@font-face Rules**
-* ** Reset or Normalize**
+* **Reset or Normalize**
 * **Base**
 * **Layout**
 * **Modules**
