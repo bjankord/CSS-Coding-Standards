@@ -8,14 +8,22 @@ This document is a work in progress.
 ## Format
 
 * Prefer tabs to spaces when indenting CSS. (Developers can change Tab Size in their editors to choose desired width)
-* Add a space after your selector(s).
-* If more than 3 selectors, put each on new line.
-* Put each rule on a new line.
+* Add a single space after your selector(s).
+* If more than 3 selectors are in use, separated by commas, put each selector on a new line.
+* Put each declaration on its own line. (Multi-lined)
+* Indent each declaration by 1 tab.
+* Use quotes when need in selctors or values.
+* Prefer double qoutes in when used. `input[type="checkbox"]`
+* Prefer shorthand hex values for colors. `background-color: #fff;`
+* Use lowercase for properties and values.
+* When using zero as a value, leave it unitless. `margin: 0;`
 * Order your CSS rules alphabetically.
 * Put prefixed rules before the unprefixed rules.
-* Line up prefixed styles.
-* Keep closing bracket on separate line.
-* Add one line bewteen styles.
+* Line up prefixed declarations so values are in line vertically.
+* Add a space between properties and values after the colon.
+* Include a semi-colon after every declaration, including the last declaration.
+* Place closing bracket of declaration block on its own line.
+* Add one blank line bewteen rulesets.
 
 
 **Formating Example:**
@@ -71,15 +79,44 @@ Layout styles should be wrappers for modules, these are things like your website
 
 ### Modules
 
-Modules will make up a majority of your websites styles. There are three parts to modules.
+Modules make up a majority of a websites styles. There are three parts to modules.
 
 * Modules
 * Modifiers
 * Subcomponents
 
+
+Move common stlyes into a module and create module modifiers for unique instances.
+
+Below as an example of an alert module with 2 modifiers.
+
+**Module Example 1**
+
+    .alert {
+        -webkit-border-radius: 15px;
+           -moz-border-radius: 15px;
+                border-radius: 15px;
+    	font-weight: 700;
+        margin: .5em 0;
+        padding: .3em;
+    }
+    
+    .alert--success {
+        background-color: #dff0d8;
+    	border-color: #d6e9c6;
+    	color: #468847;
+    }
+
+    .alert--error {
+    	background-color: #f2dede;
+    	border-color: #eed3d7;
+    	color: #b94a48;
+    }
+    
+
 **Module Naming Conventions**
 
-There are [various naming conventions](LINK THIS). Below is my preferred naming convention for modules, modifiers, and subcomponents.
+There are [various naming conventions](http://www.brettjankord.com/2013/03/06/more-thoughts-on-html-class-naming-conventions/). Below is my preferred naming convention for modules, modifiers, and subcomponents.
 
     .module {...}
     .module--modifier {...}  /* Use double dash for modifiers */
@@ -94,17 +131,17 @@ If your module name is two or more words, use camel case. This allow dashes to r
     
 **Subcomponent Naming Conventions**
 
-A header, body, and footer are common subcomponents of modules. In OOCSS, the following subcomponents have these class names: `.hd, .bd, .ft`
+A header, body, and footer are common subcomponents of modules. In OOCSS, the these subcomponents have these class names: `.hd, .bd, .ft`
 
 If I am abbreviating class names, I use 3 letters at minimum. `.hdr, .bdy, .ftr`
-
-Full example of the three parts of modules.
+    
+**Full example of the three parts of modules.**
 
     .entry {...} /* Module */
     .entry-hdr {...}   /* Module Subcomponent */
     .entry-title {...} /* Module Subcomponent */
     .entry-meta {...}  /* Module Subcomponent */
-    .entry-body {...}  /* Module Subcomponent */
+    .entry-bdy {...}  /* Module Subcomponent */
     .entry-meta--sub {...} /* Module Subcomponent Modifier */
     .entry--featured {...} /* Module Modifier */
 
@@ -112,9 +149,11 @@ Full example of the three parts of modules.
 
 States styles are things like media queries, :hover, :focus, etc., and JavaScript states.
 
-Include state styles that affect layout or module styles after the styles they are affecting.
+* Include state styles that after the styles they are affecting.
+* Prefix JavaScript states with `js-`
+* Prefer classes for JavaScript hooks compared to IDs or data-attributes. This allows them to be reusable, though still performant in querying the DOM.
 
-As for generic states like, `is-hidden`, include these in a **State section** following your **Modules section** in your stylesheet.
+As for generic states like, `js-is-hidden`, include these in a **State section** following your **Modules section** in your stylesheet.
 
 ## Comments
 
@@ -174,5 +213,5 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
     .btn--primary {...}
     
 ## Additional recommendations
-* Avoid using IDs. The specifity they add can be difficult work with.
+* Avoid using IDs for styling. IDs can be used for anchor links, though do not use them for styling. The specifity they add can be difficult work with.
 * If you are minifing your CSS, include a link in a comment to view the unminified CSS.
