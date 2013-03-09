@@ -7,8 +7,6 @@ This document is a work in progress.
 
 ## Format
 
-These are preferred formats for unminified CSS
-
 * Prefer tabs to spaces when indenting CSS. (Developers can change Tab Size in their editors to choose desired width)
 * Add a space after your selector(s).
 * Order your CSS rules alphabetically.
@@ -36,8 +34,6 @@ These are preferred formats for unminified CSS
     	-moz-border-radius: 15px;
     	border-radius: 15px;
     }
-
-If you are minifing your CSS, include a link in a comment to view the unminified CSS.
 
 ## Stucture
 
@@ -76,10 +72,10 @@ Modules will make up a majority of your websites styles. There are three parts t
 
 There are [various naming conventions](LINK THIS). Below is my preferred naming convention for modules, modifiers, and subcomponents.
 
-	.module {...}
-	.module--modifier {...} /* Use double dash for modifiers */
-	.module-subcomponent {...} /* Use single dash for subcomponents */
-  .module-subcomponent--modifier {...} /* A modifier on a subcomponent */
+    .module {...}
+    .module--modifier {...} /* Use double dash for modifiers */
+    .module-subcomponent {...} /* Use single dash for subcomponents */
+    .module-subcomponent--modifier {...} /* A modifier on a subcomponent */
 
 If your module name is two or more words, use camel case. This allow dashes to represent distinctions between modules, modifiers, and subcomponents. 
 
@@ -102,3 +98,7 @@ States styles are things like media queries, :hover, :focus, etc., and JavaScrip
 Include state styles that affect layout or module styles after the styles they are affecting.
 
 As for generic states like, `is-hidden`, include these in a **State section** following your **Modules section** in your stylesheet.
+
+## Additional recommendations
+* Avoid using IDs. The specifity they add can be difficult work with.
+* If you are minifing your CSS, include a link in a comment to view the unminified CSS.
