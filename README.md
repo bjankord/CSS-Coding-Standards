@@ -93,7 +93,8 @@ If your module name is two or more words, use camel case. This allow dashes to r
     .product-reviews {...} /* Incorrect module naming */
     
 **Subcomponent Naming Conventions**
-A header, body, and footer are common subcomponents of modules. In OOCSS, these items have the following classes, `.hd, .bd, .ft`
+
+A header, body, and footer are common subcomponents of modules. In OOCSS, the following subcomponents have these class names: `.hd, .bd, .ft`
 If you are using abbreviated class names, use 3 letters at minimum. `.hdr, .bdy, .ftr`
 
 Full example of the three parts of modules.
