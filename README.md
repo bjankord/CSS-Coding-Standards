@@ -81,9 +81,9 @@ Layout styles should be wrappers for modules, these are things like your website
 
 Modules make up a majority of a websites styles. There are three parts to modules.
 
-* Modules
-* Modifiers
-* Subcomponents
+* **Modules**
+* **Modifiers**
+* **Subcomponents**
 
 
 Move common stlyes into a module and create module modifiers for unique instances.
@@ -112,6 +112,8 @@ Below as an example of an alert module with 2 modifiers.
     	border-color: #eed3d7;
     	color: #b94a48;
     }
+    
+    <div class="alert alert--success">
     
 
 **Module Naming Conventions**
