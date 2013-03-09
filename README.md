@@ -3,7 +3,7 @@ CSS-Coding-Standards
 
 Personal coding standards for crafting CSS
 
-This document is a work in progress.
+This is a living document. My goal is to update this as my knowledge evolves and promote more consistency in my own code.
 
 ## Format
 
@@ -54,7 +54,7 @@ This document is a work in progress.
 
 ## Stucture
 
-Currently, the most efficient way to serve CSS for multiple devices is via 1 stylesheet[LINK THIS RESEARCH]. Try to keep all styles in one stylesheet to avoid additional HTTP requests. 
+Currently, the [most efficient way to serve CSS for multiple devices is via 1 stylesheet](http://andydavies.me/blog/2012/12/29/think-twice-before-using-matchmedia-to-conditionally-load-stylesheets/). Try to keep all styles in one stylesheet to avoid additional HTTP requests. 
 
 ### Ordering your styles
 
