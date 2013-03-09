@@ -17,25 +17,25 @@ These are preferred formats for unminified CSS
 * Add one line bewteen styles.
 * Keep closing bracket on separate line.
 
-  	.success {
-			background-color: #dff0d8;
-		  border-color: #d6e9c6;
-		  color: #468847;
-			-webkit-border-radius: 15px;
-			   -moz-border-radius: 15px;
-			        border-radius: 15px;
-			font-weight: 700;
-			width: 90%;
-		}
+    .success {
+    	background-color: #dff0d8;
+    	border-color: #d6e9c6;
+    	color: #468847;
+    	-webkit-border-radius: 15px;
+    	   -moz-border-radius: 15px;
+    	        border-radius: 15px;
+    	font-weight: 700;
+    	width: 90%;
+    }
 
-		.error {
-			background-color: #f2dede;
-		  border-color: #eed3d7;
-		  color: #b94a48;
-			-webkit-border-radius: 15px;
-			   -moz-border-radius: 15px;
-			        border-radius: 15px;
-		}
+    .error {
+    	background-color: #f2dede;
+    	border-color: #eed3d7;
+    	color: #b94a48;
+    	-webkit-border-radius: 15px;
+    	-moz-border-radius: 15px;
+    	border-radius: 15px;
+    }
 
 If you are minifing your CSS, include a link in a comment to view the unminified CSS.
 
