@@ -9,11 +9,14 @@ This document is a work in progress.
 
 * Prefer tabs to spaces when indenting CSS. (Developers can change Tab Size in their editors to choose desired width)
 * Add a space after your selector(s).
+* If more than 3 selectors, put each on new line.
+* Put each rule on a new line.
 * Order your CSS rules alphabetically.
 * Put prefixed rules before the unprefixed rules.
 * Line up prefixed styles.
-* Add one line bewteen styles.
 * Keep closing bracket on separate line.
+* Add one line bewteen styles.
+
 
 **Formating Example:**
 
@@ -49,10 +52,10 @@ Currently, the most efficient way to serve CSS for multiple devices is via 1 sty
 
 Follow the SMACSS ordering strucure:
 
-* Base
-* Layout
-* Modules
-* States
+* **Base**
+* **Layout**
+* **Modules**
+* **States**
 
 ### Base Styles
 
@@ -79,19 +82,14 @@ Modules will make up a majority of your websites styles. There are three parts t
 There are [various naming conventions](LINK THIS). Below is my preferred naming convention for modules, modifiers, and subcomponents.
 
     .module {...}
-    
     .module--modifier {...}  /* Use double dash for modifiers */
-    
     .module-subcomponent {...}  /* Use single dash for subcomponents */
-    
     .module-subcomponent--modifier {...} /* A modifier on a subcomponent */
 
 If your module name is two or more words, use camel case. This allow dashes to represent distinctions between modules, modifiers, and subcomponents. 
 
-    .moduleName {...} /* Correct module naming */
-    
+    .moduleName {...} /* Correct module naming *
     .productReviews {...}  /* Correct module  naming */
-    
     .product-reviews {...} /* Incorrect module naming */
     
 **Subcomponent Naming Conventions**
@@ -101,18 +99,12 @@ If you are using abbreviated class names, use 3 letters at minimum. `.hdr, .bdy,
 Full example of the three parts of modules.
 
     .entry {...} /* Module */
-    
-    .entry-hdr {...}  /* Module Subcomponent */
-    
-    .entry-title {...}   /* Module Subcomponent */
-    
-    .entry-meta {...}   /* Module Subcomponent */
-    
-    .entry-body {...}   /* Module Subcomponent */
-    
-    .entry-meta--sub {...}   /* Module Subcomponent Modifier */
-    
-    .entry--featured {...}   /* Module Modifier */
+    .entry-hdr {...}   /* Module Subcomponent */
+    .entry-title {...} /* Module Subcomponent */
+    .entry-meta {...}  /* Module Subcomponent */
+    .entry-body {...}  /* Module Subcomponent */
+    .entry-meta--sub {...} /* Module Subcomponent Modifier */
+    .entry--featured {...} /* Module Modifier */
 
 ### States
 
@@ -130,7 +122,9 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
 * Keep line-length to a sensible maximum, e.g., 80 columns.
 * Create a comment for each main section, base, layout, modules, and state.
 * Create comments for sub-sections, typically I add these above modules.
-* There should be no line gap between section/sub-section comments and multiline comments.
+* Add 3 lines before sub-section comments when they follow styles. See below example 2.
+* There should be no lines sections and sub-section comments
+* There should be no lines between sections/sub-sections and multiline comments.
 
 
 **Comment types example inspired by Idiomatic CSS comments**
@@ -153,12 +147,11 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
     
     /* Basic comment */
 
-**Comment spacing examples**
+**Comment spacing example**
 
     /*----------------------------------------------------------------------------
      * Modules
     ----------------------------------------------------------------------------*/
-
     /* Post Entries
     --------------------------------------*/
     /**
@@ -171,6 +164,12 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
       *display: inline; /* IE7 and lower fix */
       *zoom: 1; /* IE7 and lower fix */
     }
+    
+    
+    /* Buttons
+    --------------------------------------*/
+    .btn {...} 
+    .btn--primary {...}
     
 ## Additional recommendations
 * Avoid using IDs. The specifity they add can be difficult work with.
