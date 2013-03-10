@@ -218,4 +218,4 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
     
 ## Additional recommendations
 * Avoid using IDs for styling. IDs can be used for anchor links, though do not use them for styling. The specifity they add can be difficult work with.
-* If you are minifing your CSS, include a link in a comment to view the unminified CSS.
+* If you are minifing your CSS, include a link in a comment to view the unminified CSS. `style.max.css` [Source](http://daneden.me/2012/07/max-css-in-depth/)
