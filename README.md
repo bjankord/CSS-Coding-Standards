@@ -175,7 +175,7 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
 **Comment types example inspired by Idiomatic CSS comments**
  
     /*----------------------------------------------------------------------------
-     * Section comment block
+     Section comment block
     ----------------------------------------------------------------------------*/
 
     /* Sub-section comment block
@@ -195,7 +195,7 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
 **Comment spacing example**
 
     /*----------------------------------------------------------------------------
-     * Modules
+     Modules
     ----------------------------------------------------------------------------*/
     /* Post Entries
     --------------------------------------*/
@@ -218,4 +218,5 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
     
 ## Additional recommendations
 * Avoid using IDs for styling. IDs can be used for anchor links, though do not use them for styling. The specifity they add can be difficult work with.
-* If you are minifing your CSS, include a link in a comment to view the unminified CSS. `style.max.css` [Source](http://daneden.me/2012/07/max-css-in-depth/)
+* Include a link at the top in a comment to this document.
+* If you are minifing your CSS, include a link at the top in a comment to view the unminified CSS. `style.max.css` [Source](http://daneden.me/2012/07/max-css-in-depth/)
