@@ -24,31 +24,31 @@ This is a living document. My goal is to update this as my knowledge evolves and
 
 
 **Formating Example:**
+```css
+.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  font-weight: 700;
+  margin: .5em 0;
+  padding: .3em;
+}
 
-    .success {
-    	background-color: #dff0d8;
-    	border-color: #d6e9c6;
-    	color: #468847;
-    	-webkit-border-radius: 15px;
-    	   -moz-border-radius: 15px;
-    	        border-radius: 15px;
-    	font-weight: 700;
-        margin: .5em 0;
-        padding: .3em;
-    }
-
-    .error {
-    	background-color: #f2dede;
-    	border-color: #eed3d7;
-    	color: #b94a48;
-    	-webkit-border-radius: 15px;
-    	   -moz-border-radius: 15px;
-    	        border-radius: 15px;
-        font-weight: 700;
-        margin: .5em 0;
-        padding: .3em;
-    }
-
+.error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  font-weight: 700;
+  margin: .5em 0;
+  padding: .3em;
+}
+```
 ## Stucture
 
 Currently, the [most efficient way to serve CSS for multiple devices is via 1 stylesheet](http://andydavies.me/blog/2012/12/29/think-twice-before-using-matchmedia-to-conditionally-load-stylesheets/). Try to keep all styles in one stylesheet to avoid additional HTTP requests. 
@@ -90,46 +90,50 @@ Move common stlyes into a module and create module modifiers for unique instance
 Below as an example of an alert module with 2 modifiers.
 
 **Module Example 1**
+```css
+.alert {
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  font-weight: 700;
+  margin: .5em 0;
+  padding: .3em;
+}
 
-    .alert {
-        -webkit-border-radius: 15px;
-           -moz-border-radius: 15px;
-                border-radius: 15px;
-    	font-weight: 700;
-        margin: .5em 0;
-        padding: .3em;
-    }
-    
-    .alert--success {
-        background-color: #dff0d8;
-    	border-color: #d6e9c6;
-    	color: #468847;
-    }
+.alert--success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
 
-    .alert--error {
-    	background-color: #f2dede;
-    	border-color: #eed3d7;
-    	color: #b94a48;
-    }
+.alert--error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+}
     
-    <div class="alert alert--success">
-    
+<div class="alert alert--success">
+``` 
 
 **Module Naming Conventions**
 
 There are [various naming conventions](http://www.brettjankord.com/2013/03/06/more-thoughts-on-html-class-naming-conventions/). Below is my preferred naming convention for modules, modifiers, and subcomponents.
 
-    .module {...}
-    .module--modifier {...}  /* Use double dash for modifiers */
-    .module-subcomponent {...}  /* Use single dash for subcomponents */
-    .module-subcomponent--modifier {...} /* A modifier on a subcomponent */
+```css
+.module {...}
+.module--modifier {...}  /* Use double dash for modifiers */
+.module-subcomponent {...}  /* Use single dash for subcomponents */
+.module-subcomponent--modifier {...} /* A modifier on a subcomponent */
+```
 
 If your module name is two or more words, use camel case. This allow dashes to represent distinctions between modules, modifiers, and subcomponents. 
 
-    .moduleName {...} /* Correct module naming *
-    .productReviews {...}  /* Correct module  naming */
-    .product-reviews {...} /* Incorrect module naming */
-    
+```css
+.moduleName {...} /* Correct module naming */
+.productReviews {...}  /* Correct module  naming */
+.product-reviews {...} /* Incorrect module naming */
+```
+
 **Subcomponent Naming Conventions**
 
 A header, body, and footer are common subcomponents of modules. In OOCSS, the these subcomponents have these class names: `.hd, .bd, .ft`
@@ -138,13 +142,15 @@ If I am abbreviating class names, I use 3 letters at minimum. `.hdr, .bdy, .ftr`
     
 **Full example of the three parts of modules.**
 
-    .entry {...} /* Module */
-    .entry-hdr {...}   /* Module Subcomponent */
-    .entry-title {...} /* Module Subcomponent */
-    .entry-meta {...}  /* Module Subcomponent */
-    .entry-bdy {...}  /* Module Subcomponent */
-    .entry-meta--sub {...} /* Module Subcomponent Modifier */
-    .entry--featured {...} /* Module Modifier */
+```css
+.entry {...} /* Module */
+.entry-hdr {...}   /* Module Subcomponent */
+.entry-title {...} /* Module Subcomponent */
+.entry-meta {...}  /* Module Subcomponent */
+.entry-bdy {...}  /* Module Subcomponent */
+.entry-meta--sub {...} /* Module Subcomponent Modifier */
+.entry--featured {...} /* Module Modifier */
+```
 
 ### States
 
@@ -170,49 +176,51 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
 
 
 **Comment types example inspired by Idiomatic CSS comments**
- 
-    /*----------------------------------------------------------------------------
-     Section comment block
-    ----------------------------------------------------------------------------*/
+```
+/*----------------------------------------------------------------------------
+ Section comment block
+----------------------------------------------------------------------------*/
 
-    /* Sub-section comment block
-    --------------------------------------*/
-    
-    /**
-     * The first sentence of the long description starts here and continues on this
-     * line for a while finally concluding here at the end of this paragraph.
-     *
-     * The long description is ideal for more detailed explanations and
-     * documentation. It can include example HTML, URLs, or any other information
-     * that is deemed necessary or useful.
-     */
-    
-    /* Basic comment */
+/* Sub-section comment block
+--------------------------------------*/
+
+/**
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ */
+
+/* Basic comment */
+```
 
 **Comment spacing example**
+```css
+/*----------------------------------------------------------------------------
+ Modules
+----------------------------------------------------------------------------*/
+/* Post Entries
+--------------------------------------*/
+/**
+ * Styles post entries and featured post entries. Included here could be more
+ * details about the styles for other developers.
+ */
 
-    /*----------------------------------------------------------------------------
-     Modules
-    ----------------------------------------------------------------------------*/
-    /* Post Entries
-    --------------------------------------*/
-    /**
-     * Styles post entries and featured post entries. Included here could be more
-     * details about the styles for other developers.
-     */
-    
-    .entry {...} 
-    .entry--featured {
-      *display: inline; /* IE7 and lower fix */
-      *zoom: 1; /* IE7 and lower fix */
-    }
-    
-    
-    /* Buttons
-    --------------------------------------*/
-    .btn {...} 
-    .btn--primary {...}
-    
+.entry {...} 
+.entry--featured {
+  *display: inline; /* IE7 and lower fix */
+  *zoom: 1; /* IE7 and lower fix */
+}
+
+
+/* Buttons
+--------------------------------------*/
+.btn {...} 
+.btn--primary {...}
+```
+
 ## Preprocessors
 
 My CSS preprocessor of choice is Sass using the Scss syntax. I'm still forming my ideas on best practices for Scss.
@@ -222,6 +230,7 @@ Below are some rough ideas.
 ### Scss File Structure
 
 This file structure is based on ideas from: [http://blog.55minutes.com/2013/01/smacss-and-rails/](http://blog.55minutes.com/2013/01/smacss-and-rails/)
+```    
     root/css/
     └── style.scss
         ├── globals.scss
@@ -238,7 +247,8 @@ This file structure is based on ideas from: [http://blog.55minutes.com/2013/01/s
         │   └── …
         │ 
         └── states (mainly JS states, other states should follow the styles they are affecting)
-    
+```
+
 ## Additional recommendations
 * Avoid using IDs for styling. IDs can be used for anchor links, though do not use them for styling. The specifity they add can be difficult work with.
 * Include a link at the top in a comment to this document.
