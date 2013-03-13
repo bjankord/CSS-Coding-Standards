@@ -7,25 +7,31 @@ This is a living document. My goal is to update this as my knowledge evolves and
 
 
 ## Guidelines
-* Avoid using IDs for styling. IDs can be used for anchor links and are great for JS hooks, though do not use them for styling. They add specifity to CSS that can be difficult work with.
-* Include a link at the top in a comment to this document.
-* If you are minifing your CSS, include a link at the top in a comment to view the unminified CSS. `style.max.css` [Source](http://daneden.me/2012/07/max-css-in-depth/)
+* Prefer one global stylesheet. ex. `style.css`
+* Avoid using IDs for styling. IDs are great for anchor links and JS hooks, but avoid using them as styling hooks. [Source](http://oli.jp/2011/ids/)
+* Include a link at the top of the stylesheet back to these coding standards.
+* If you are minifing your CSS, include a link at the top to view the unminified CSS. `style.max.css` [Source](http://daneden.me/2012/07/max-css-in-depth/)
+* Prefix all javascript-based selectors, (IDs, Classes) with `js-`. [Source](https://github.com/styleguide/javascript)
+* Never reference `js-` prefixed class names from CSS files. `js-` base classes are to be used exclusively in JS files. [Source](https://github.com/styleguide/css)
+* Use the `is-` prefix for state rules that are shared between CSS and JS.
+* Avoid qualifying class names with type selectors. `Prefer .nav {...} instead of ul.nav {...}`
 
 
 ## Formatting CSS
 
 * Prefer soft-tabs with 2 space indent.
 * Add a single space before the opening bracket `{` in rule sets.
-* Put each declaration on its own line. (multi-lined)
-* Use quotes when needed in selctors or values, prefer double quotes. `input[type="checkbox"]`
-* Prefer shorthand hex values for colors. `background-color: #fff;`
-* Use lowercase format for property and value names.
-* When using zero based values, leave the value unitless. `margin: 0;`
+* Separate selectors and declarations by new lines. (multi-lined)
 * Order your CSS rules alphabetically.
 * Put prefixed rules before the unprefixed rules.
 * Line up prefixed declarations so values are in line vertically.
 * Add a space between properties and values after the colon. `display: block`
 * Include a semi-colon after every declaration, including the last declaration.
+* Use quotes when needed in selctors or values, prefer double quotes. `input[type="checkbox"]`
+* Prefer shorthand hex values for colors. `background-color: #fff;`
+* Use lowercase format for property and value names.
+* When using zero based values, leave the value unitless. `margin: 0;`
+* Omit leading “0”s in values. `font-size: .8em;`
 * Place closing bracket of declaration block on its own line.
 * Add one blank line bewteen rule sets.
 
