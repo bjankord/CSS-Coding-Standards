@@ -220,11 +220,14 @@ My CSS preprocessor of choice is Sass using the Scss syntax. I'm still forming m
 Below are some rough ideas.
 
 ### Scss File Structure
+
+This file structure is based on ideas from: [http://blog.55minutes.com/2013/01/smacss-and-rails/](http://blog.55minutes.com/2013/01/smacss-and-rails/)
     root/css/
     └── style.scss
-        ├── globals
-        │   ├── _variables.css.scss
-        │   └── _mixins.css.scss
+        ├── globals.scss
+        │   ├── _variables.scss
+        │   ├── _functions.scss
+        │   └── _mixins.scss
         │    
         ├── custom fonts
         ├── reset or normalize
