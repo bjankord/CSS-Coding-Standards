@@ -5,7 +5,14 @@ Personal coding standards for crafting CSS
 
 This is a living document. My goal is to update this as my knowledge evolves and promote more consistency in my own code.
 
-## Format
+
+## Guidelines
+* Avoid using IDs for styling. IDs can be used for anchor links and are great for JS hooks, though do not use them for styling. They add specifity to CSS that can be difficult work with.
+* Include a link at the top in a comment to this document.
+* If you are minifing your CSS, include a link at the top in a comment to view the unminified CSS. `style.max.css` [Source](http://daneden.me/2012/07/max-css-in-depth/)
+
+
+## Formatting CSS
 
 * Prefer soft-tabs with 2 space indent.
 * Add a single space before the opening bracket `{` in rule sets.
@@ -23,7 +30,7 @@ This is a living document. My goal is to update this as my knowledge evolves and
 * Add one blank line bewteen rule sets.
 
 
-**Formating Example:**
+**Formatting Example:**
 ```css
 .success {
   background-color: #dff0d8;
@@ -49,7 +56,7 @@ This is a living document. My goal is to update this as my knowledge evolves and
   padding: .3em;
 }
 ```
-## Stucture
+## File Stucture
 
 Currently, the [most efficient way to serve CSS for multiple devices is via 1 stylesheet](http://andydavies.me/blog/2012/12/29/think-twice-before-using-matchmedia-to-conditionally-load-stylesheets/). Try to keep all styles in one stylesheet to avoid additional HTTP requests. 
 
@@ -162,7 +169,7 @@ States styles are things like media queries, :hover, :focus, etc., and JavaScrip
 
 As for generic states like, `js-is-hidden`, include these in a **State section** following your **Modules section** in your stylesheet.
 
-## Comments
+## Comments & Documentation
 
 I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](https://github.com/necolas/idiomatic-css) with my own minor adjustments.
 
@@ -221,7 +228,7 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
 .btn--primary {...}
 ```
 
-## Preprocessors
+## Pre-processors
 
 My CSS preprocessor of choice is Sass using the Scss syntax. I'm still forming my ideas on best practices for Scss.
 
@@ -248,8 +255,3 @@ This file structure is based on ideas from: [http://blog.55minutes.com/2013/01/s
         │ 
         └── states (mainly JS states, other states should follow the styles they are affecting)
 ```
-
-## Additional recommendations
-* Avoid using IDs for styling. IDs can be used for anchor links, though do not use them for styling. The specifity they add can be difficult work with.
-* Include a link at the top in a comment to this document.
-* If you are minifing your CSS, include a link at the top in a comment to view the unminified CSS. `style.max.css` [Source](http://daneden.me/2012/07/max-css-in-depth/)
