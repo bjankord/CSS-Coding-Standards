@@ -7,23 +7,20 @@ This is a living document. My goal is to update this as my knowledge evolves and
 
 ## Format
 
-* Prefer tabs to spaces when indenting CSS. (Developers can change Tab Size in their editors to choose desired width)
-* Add a single space after your selector(s).
-* If more than 3 selectors are in use, separated by commas, put each selector on a new line.
-* Put each declaration on its own line. (Multi-lined)
-* Indent each declaration by 1 tab.
-* Use quotes when need in selctors or values.
-* Prefer double qoutes in when used. `input[type="checkbox"]`
+* Prefer soft-tabs with 2 space indent.
+* Add a single space before the opening bracket `{` in rule sets.
+* Put each declaration on its own line. (multi-lined)
+* Use quotes when needed in selctors or values, prefer double quotes. `input[type="checkbox"]`
 * Prefer shorthand hex values for colors. `background-color: #fff;`
-* Use lowercase for properties and values.
-* When using zero as a value, leave it unitless. `margin: 0;`
+* Use lowercase format for property and value names.
+* When using zero based values, leave the value unitless. `margin: 0;`
 * Order your CSS rules alphabetically.
 * Put prefixed rules before the unprefixed rules.
 * Line up prefixed declarations so values are in line vertically.
-* Add a space between properties and values after the colon.
+* Add a space between properties and values after the colon. `display: block`
 * Include a semi-colon after every declaration, including the last declaration.
 * Place closing bracket of declaration block on its own line.
-* Add one blank line bewteen rulesets.
+* Add one blank line bewteen rule sets.
 
 
 **Formating Example:**
@@ -60,7 +57,7 @@ Currently, the [most efficient way to serve CSS for multiple devices is via 1 st
 
 Order styles based on SMACSS structure with my own additions.
 
-* **@font-face Rules**
+* **Custom Fonts (@font-face rules)**
 * **Reset or Normalize**
 * **Base**
 * **Layout**
@@ -215,6 +212,29 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
     --------------------------------------*/
     .btn {...} 
     .btn--primary {...}
+    
+## Preprocessors
+
+My CSS preprocessor of choice is Sass using the Scss syntax. I'm still forming my ideas on best practices for Scss.
+
+Below are some rough ideas.
+
+### Scss File Structure
+    root/css/
+    └── style.scss
+        ├── globals
+        │   ├── _variables.css.scss
+        │   └── _mixins.css.scss
+        │    
+        ├── custom fonts
+        ├── reset or normalize
+        ├── base (may not need reset or normalize if base is thoughrough)
+        ├── layout
+        └── modules
+        │   ├── alerts
+        │   └── …
+        │ 
+        └── states (mainly JS states, other states should follow the styles they are affecting)
     
 ## Additional recommendations
 * Avoid using IDs for styling. IDs can be used for anchor links, though do not use them for styling. The specifity they add can be difficult work with.
