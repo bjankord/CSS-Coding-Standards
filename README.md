@@ -234,11 +234,87 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
 .btn--primary {...}
 ```
 
-## Pre-processors
+Sass/SCSS Coding Standards
+==========================
 
-My CSS preprocessor of choice is Sass using the Scss syntax. I'm still forming my ideas on best practices for Scss.
+These standards have been adopted from Chris Coyier's Sass Style Guide article. [Source](http://css-tricks.com/sass-style-guide/)
 
-Below are some rough ideas.
+* List extends first.
+* List includes next, unless they are media queries.
+* List regular styles next.
+* List include media queries next.
+* List nested selectors last.
+* Use same order inside nested selectors.
+* Add a line before nested selectors.
+
+Example
+
+    .weather {
+  	  @extends %module;
+		  @include transition(all 0.3s ease); 
+		  background: LightCyan;
+
+		  > h3 {
+		    @include transform(rotate(90deg));
+		    border-bottom: 1px solid white;
+		  }
+		}
+
+* Use mixins for vendor prefixes.
+* Limit nesting to 3 levels deep.
+* In your main CSS file list vendor dependencies first.
+* List authored dependencies next.
+* List remaining CSS after vendor/author dependencies.
+
+Example
+
+		/* Vendor Dependencies */
+		@import "compass";
+
+		/* Authored Dependencies */
+		@import "global/colors";
+		@import "global/mixins";
+
+		/* Start main styles here */
+
+* Locally compile in expanded format.
+* Deploy in compiled format.
+* Be generous with comments.
+* // This type of comment get stripped in compiled code
+* /* This type of comment */ get stripped  only in *compressed* compiled code
+* /! This type of comment doest not get stripped in *compressed* compiled code
+* Variablize all common numbers, and numbers with meaning.
+
+Example
+
+		$zHeader: 2000;
+		$zOverlay: 5000;
+		$zMessage: 5050;
+
+		.header {
+		  z-index: $zHeader;
+		}
+		.overlay {
+		  z-index: $zOverlay;
+		}
+		.message {
+		  z-index: $zMessage;
+		}
+
+* Variablize all colors.
+* Nest and name your media queries. [Source](http://css-tricks.com/naming-media-queries/)
+
+Example
+
+	.sidebar {
+		@include bp(mama-bear) {
+		  width: 25%;
+		}
+	  float: right;
+	  width: 33.33%;
+	}
+
+	* Add shame file at end of style.css for hot fixes [Source] (http://csswizardry.com/2013/04/shame-css/)
 
 ### Scss File Structure
 
