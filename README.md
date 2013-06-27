@@ -234,7 +234,7 @@ I've adopted Nicholas Gallagehr's commenting guidelines from [Idiomatic CSS](htt
 .btn--primary {...}
 ```
 
-Sass/SCSS Coding Standards
+SCSS Coding Standards
 ==========================
 
 These standards have been adopted from Chris Coyier's Sass Style Guide article. [Source](http://css-tricks.com/sass-style-guide/)
@@ -262,27 +262,9 @@ Example
 
 * Use mixins for vendor prefixes.
 * Limit nesting to 3 levels deep.
-* In your main CSS file list vendor dependencies first.
-* List authored dependencies next.
-* List remaining CSS after vendor/author dependencies.
-
-Example
-
-		/* Vendor Dependencies */
-		@import "compass";
-
-		/* Authored Dependencies */
-		@import "global/colors";
-		@import "global/mixins";
-
-		/* Start main styles here */
-
 * Locally compile in expanded format.
 * Deploy in compiled format.
-* Be generous with comments.
-* // This type of comment get stripped in compiled code
-* /* This type of comment */ get stripped  only in *compressed* compiled code
-* /! This type of comment doest not get stripped in *compressed* compiled code
+* Variablize all colors.
 * Variablize all common numbers, and numbers with meaning.
 
 Example
@@ -301,20 +283,30 @@ Example
 		  z-index: $zMessage;
 		}
 
-* Variablize all colors.
+
 * Nest and name your media queries. [Source](http://css-tricks.com/naming-media-queries/)
 
 Example
 
 	.sidebar {
-		@include bp(mama-bear) {
-		  width: 25%;
-		}
 	  float: right;
 	  width: 33.33%;
+	  @include breakpoint(small) {
+	  	width: 25%;
+	  }
 	}
 
-	* Add shame file at end of style.css for hot fixes [Source] (http://csswizardry.com/2013/04/shame-css/)
+* Add shame file at end of style.css for hot fixes [Source] (http://csswizardry.com/2013/04/shame-css/)
+
+**Comments**
+
+Be generous with comments.
+
+**//** This type of comment gets stripped in **compiled code**
+
+**/*  comment */** This type of comment gets stripped  **only in compressed compiled code**
+
+**/!** This type of comment doest not get stripped in **compressed compiled code**
 
 ### Scss File Structure
 
@@ -322,14 +314,17 @@ This file structure is based on ideas from: [http://blog.55minutes.com/2013/01/s
 ```    
     root/css/
     └── style.scss
+        │ 
+        ├── compass
+        │  
         ├── globals.scss
         │   ├── _variables.scss
         │   ├── _functions.scss
         │   └── _mixins.scss
         │    
         ├── custom fonts
-        ├── reset or normalize
-        ├── base (may not need reset or normalize if base is thoughrough)
+        ├── normalize or reset
+        ├── base
         ├── layout
         └── modules
         │   ├── alerts
