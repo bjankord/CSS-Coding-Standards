@@ -264,7 +264,27 @@ Example
 * Limit nesting to 3 levels deep.
 * Locally compile in expanded format.
 * Deploy in compiled format.
-* Variablize all colors.
+* Variablize all colors with two levels.
+
+Example
+
+	// first we set descriptive variables:
+	$darkgrey: #333;
+	$blue: #f00;
+	 
+	// then we set functional variables:
+	$text_color: $darkgrey;
+	$link_color: $blue;
+	$border_color: $blue;
+	 
+	.myClass{
+	  color: $text_color;
+	  border-color: $border_color;
+	}
+	a{
+	  color: $link_color;
+	}
+	
 * Variablize all common numbers, and numbers with meaning.
 
 Example
