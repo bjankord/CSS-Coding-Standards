@@ -113,13 +113,13 @@ Below as an example of an alert module with 2 modifiers.
   padding: .3em;
 }
 
-.alert--success {
+.alert-success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
 
-.alert--error {
+.alert-error {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
@@ -134,9 +134,9 @@ There are [various naming conventions](http://www.brettjankord.com/2013/03/06/mo
 
 ```css
 .module {...}
-.module--modifier {...}  /* Use double dash for modifiers */
-.module-subcomponent {...}  /* Use single dash for subcomponents */
-.module-subcomponent--modifier {...} /* A modifier on a subcomponent */
+.module-modifier {...}  /* Use single dash for subcomponents */
+.module--subComponent {...}  /* Use double dash for modifiers */
+.module--subComponent-modifier {...} /* A modifier on a subcomponent */
 ```
 
 If your module name is two or more words, use camel case. This allow dashes to represent distinctions between modules, modifiers, and subcomponents. 
@@ -157,12 +157,12 @@ If I am abbreviating class names, I use 3 letters at minimum. `.hdr, .bdy, .ftr`
 
 ```css
 .entry {...} /* Module */
-.entry-hdr {...}   /* Module Subcomponent */
-.entry-title {...} /* Module Subcomponent */
-.entry-meta {...}  /* Module Subcomponent */
-.entry-bdy {...}  /* Module Subcomponent */
-.entry-meta--sub {...} /* Module Subcomponent Modifier */
-.entry--featured {...} /* Module Modifier */
+.entry-featured {...} /* Module Modifier */
+.entry--hdr {...}   /* Module Subcomponent */
+.entry--title {...} /* Module Subcomponent */
+.entry--meta {...}  /* Module Subcomponent */
+.entry--bdy {...}  /* Module Subcomponent */
+.entry--meta-sub {...} /* Module Subcomponent Modifier */
 ```
 
 ### States
